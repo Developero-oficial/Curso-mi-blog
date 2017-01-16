@@ -1,3 +1,4 @@
+<?php $message = $_GET['message'] ?? ''; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,13 +9,14 @@
 </head>
 <body>
   <div class="container">
-    <form class="form-signin">
+    <form class="form-signin" method="post" action="validar_login.php">
       <h2 class="form-signin-heading">Please sign in</h2>
+      <?php echo $message; ?>
       <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+      <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address"  autofocus>
       <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" >
+      <button class="btn btn-lg btn-primary btn-block" name="submit" type="submit">Sign in</button>
     </form>
   </div> <!-- /container -->
 </body>
