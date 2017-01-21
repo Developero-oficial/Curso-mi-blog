@@ -11,8 +11,14 @@ if (isset($_POST['submit'])) {
   }
 
   $login = new Login(new Conexion);
-  $login->setPassword($password);
   $login->setEmail($email);
+  $login->setPassword($password);
+  if ($login->signIn()) {
+    echo 'Credenciales válidas';
+  } else {
+    header('location: login.php?message=Usuario o contraseña incorrectos');
+  }
+  
 }
 
 ?>

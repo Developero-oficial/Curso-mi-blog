@@ -24,7 +24,4 @@ class Conexion extends Mysqli
   }
 }
 
-$conn = new Conexion();
-var_dump($conn);
-
 ?>
