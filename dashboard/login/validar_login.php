@@ -9,7 +9,7 @@ if (isset($_POST['submit'])) {
   if (empty($email) or empty($password)) {
     header('location: login.php?message=Usuario o contraseña no introducidos');
   }
-
+  // ' OR '1'='1 
   $login = new Login(new Conexion);
   $login->setEmail($email);
   $login->setPassword($password);
