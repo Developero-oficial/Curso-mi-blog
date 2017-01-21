@@ -22,15 +22,26 @@ class Login
   }
 
   public function signIn () {
-    $query = "SELECT * FROM `usuario` WHERE email_dev = '$this->email'";
-    echo $query;
-    $res = $this->con->query($query);
-    if ($this->con->affected_rows > 0) {
-      $row = $res->fetch_array(MYSQLI_ASSOC);
-      if (password_verify($this->password, $row['password_dev']))
+    $row = $this->getArrayQueryResult();
+    if ($this->isAffectedRows()) {
+      if ($this->passwordVerify($row['password_dev']))
         return $row;
     }      
     return false;
+  }
+
+  public function getArrayQueryResult () {
+    $query = "SELECT * FROM `usuario` WHERE email_dev = '$this->email'";
+    $result = $this->con->query($query);
+    return $result->fetch_array(MYSQLI_ASSOC);
+  }
+
+  public function isAffectedRows ():bool {
+    return ($this->con->affected_rows > 0);
+  }
+
+  public function passwordVerify ($password):bool {
+    return password_verify($this->password, $password);
   }
 }
 
