@@ -27,13 +27,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `articulo` (
-  `articulo_id` int(4) NOT NULL,
-  `categoria_id` int(4) DEFAULT NULL,
-  `autor` varchar(40) NOT NULL,
-  `titulo` varchar(40) NOT NULL,
-  `contenido` text NOT NULL,
-  `fecha` date NOT NULL,
-  `img` varchar(60) NOT NULL
+  `articulo_id_dev` int(4) NOT NULL,
+  `categoria_id_dev` int(4) DEFAULT NULL,
+  `autor_dev` varchar(40) NOT NULL,
+  `titulo_dev` varchar(40) NOT NULL,
+  `contenido_dev` text NOT NULL,
+  `fecha_dev` date NOT NULL,
+  `img_dev` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -43,8 +43,8 @@ CREATE TABLE `articulo` (
 --
 
 CREATE TABLE `categoria` (
-  `categoria_id` int(11) NOT NULL,
-  `categoria` varchar(40) NOT NULL
+  `categoria_id_dev` int(11) NOT NULL,
+  `categoria_dev` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -54,7 +54,7 @@ CREATE TABLE `categoria` (
 --
 
 CREATE TABLE `usuario` (
-  `usuario_id` int(4) NOT NULL,
+  `id_dev` int(4) NOT NULL,
   `email_dev` varchar(50) NOT NULL,
   `usuario_dev` varchar(80) NOT NULL,
   `password_dev` varchar(150) NOT NULL
