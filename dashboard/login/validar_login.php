@@ -1,6 +1,6 @@
 <?php 
 spl_autoload_register(function ($class) {
-    include "../../class/$class/$class.class.php";
+  include "../../class/$class/$class.class.php";
 });
 
 if (isset($_POST['submit'])) {
@@ -18,7 +18,9 @@ if (isset($_POST['submit'])) {
   {
     $session = new Session();
     $session->addValue('email', $row['email_dev']);
-    $session->getValue('emailasd');
+    $session->addValue('id', $row['id_dev']);
+    $session->addValue('usuario', $row['usuario_dev']);
+    header('location: ../dashboard.php');
   } else {
     header('location: login.php?message=Usuario o contraseña incorrectos&type=warningMessage');
   }
