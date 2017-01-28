@@ -14,7 +14,7 @@ $message_out = $message ? $message->getMessage($_GET['message']) :'';
   <meta charset="utf-8">
   <title>Login | Mi blog</title>
   <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="../../css/sigin.css">
+  <link rel="stylesheet" type="text/css" href="../../css/sigin/sigin.css">
 </head>
 <body>
   <div class="container">
