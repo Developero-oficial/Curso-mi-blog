@@ -13,7 +13,8 @@ class UpdateCommand implements iCommand
 
   public function exec()
   {
-    $this->article->update();
+    echo '*' . __CLASS__ . '-> exec</br>';
+    return $this->article->update();
   }
 }
 ?>

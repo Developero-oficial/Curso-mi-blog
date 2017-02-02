@@ -13,7 +13,8 @@ class InsertCommand implements iCommand
 
   public function exec()
   {
-    $this->article->insert();
+    echo '*' . __CLASS__ . '-> exec</br>';
+    return $this->article->insert();
   }
 }
 ?>

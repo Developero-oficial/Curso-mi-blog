@@ -1,7 +1,4 @@
 <?php 
-
-require '../../config/config.php';
-
 class Conexion extends Mysqli
 {
   private $host;
@@ -15,7 +12,6 @@ class Conexion extends Mysqli
     $this->user = CONF_DB_USER;
     $this->pass = CONF_DB_PASS;
     $this->db = CONF_DB_DATABASE;
-
     parent::__construct($this->host, $this->user, $this->pass, $this->db);
   }
 

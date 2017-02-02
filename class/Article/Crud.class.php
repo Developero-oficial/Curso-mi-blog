@@ -9,8 +9,14 @@ class Crud
   protected $update;
   protected $delete;
 
-  public function __construct(InsertCommand $insertC, SelectCommand $selectC, UpdateCommand $updateC, DeleteCommand $deleteC)
+  public function __construct(
+    InsertCommand $insertC
+    ,SelectCommand $selectC
+    ,UpdateCommand $updateC
+    ,DeleteCommand $deleteC
+  )
   {
+    echo 'Iniciando Crud </br></br>';
     $this->insert = $insertC;
     $this->select = $selectC;
     $this->update = $updateC;
@@ -19,22 +25,26 @@ class Crud
 
   public function insert()
   {
-    $this->insert->exec();
+    echo '** Crud -> insert </br>';
+    return $this->insert->exec();
   }
 
   public function select()
   {
-    $this->select->exec();
+    echo '** Crud -> select </br>';
+    return $this->select->exec();
   }
 
   public function update()
   {
-    $this->update->exec();
+    echo '** Crud -> update </br>';
+    return $this->update->exec();
   }
 
   public function delete()
   {
-    $this->delete->exec();
+    echo '** Crud -> delete </br>';
+    return $this->delete->exec();
   }
 }
 

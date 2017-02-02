@@ -13,7 +13,8 @@ class SelectCommand implements iCommand
 
   public function exec()
   {
-    $this->article->select();
+    echo '*' . __CLASS__ . '-> exec</br>';
+    return $this->article->select();
   }
 }
 ?>

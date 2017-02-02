@@ -13,11 +13,12 @@ class Client
   
   public function __construct(Article $article)
   {
+    echo 'Iniciando Cliente </br>';
     $this->article = $article;
     $this->insert = new InsertCommand($this->article);
-    $this->insert = new UpdateCommand($this->article);
-    $this->insert = new SelectCommand($this->article);
-    $this->insert = new DeleteCommand($this->article);
+    $this->update = new UpdateCommand($this->article);
+    $this->select = new SelectCommand($this->article);
+    $this->delete = new DeleteCommand($this->article);
     $this->crud = new Crud($this->insert, $this->select, $this->update, $this->delete);
   }
 
@@ -25,19 +26,23 @@ class Client
   {
     switch ($action) {
       case 'insert':
-        $this->crud->insert();
+        echo '*** Petición insert </br>'; 
+        return $this->crud->insert();
         break;
       case 'update':
-        $this->crud->update();
+        echo '*** Petición update </br>';
+        return $this->crud->update();
         break;
       case 'delete':
-        $this->crud->delete();
+        echo '*** Petición delete </br>';
+        return $this->crud->delete();
         break;
       case 'select':
-        $this->crud->select();
+        echo '*** Petición select </br>';
+        return $this->crud->select();
         break;
       default:
-        return throw new Exception("Error Processing Request", 1);
+        throw new Exception("Error Processing Request", 1);
         break;
     }
   }
