@@ -68,7 +68,7 @@ CREATE TABLE `usuario` (
 -- Indices de la tabla `articulo`
 --
 ALTER TABLE `articulo`
-  ADD PRIMARY KEY (`articulo_id`);
+  ADD PRIMARY KEY (`articulo_id_dev`);
 
 --
 -- Indices de la tabla `categoria`
@@ -80,7 +80,7 @@ ALTER TABLE `categoria`
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`usuario_id`),
+  ADD PRIMARY KEY (`id_dev`),
   ADD UNIQUE KEY `email_dev` (`email_dev`);
 
 --
@@ -91,17 +91,17 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `articulo`
 --
 ALTER TABLE `articulo`
-  MODIFY `articulo_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `articulo_id_dev` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 --
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `categoria_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `categoria_id_dev` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `usuario_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_dev` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
