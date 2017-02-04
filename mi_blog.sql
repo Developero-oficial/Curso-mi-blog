@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-01-2017 a las 05:47:27
+-- Tiempo de generación: 03-02-2017 a las 04:54:46
 -- Versión del servidor: 10.1.16-MariaDB
 -- Versión de PHP: 7.0.9
 
@@ -27,13 +27,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `articulo` (
-  `articulo_id_dev` int(4) NOT NULL,
-  `categoria_id_dev` int(4) DEFAULT NULL,
-  `autor_dev` varchar(40) NOT NULL,
-  `titulo_dev` varchar(40) NOT NULL,
-  `contenido_dev` text NOT NULL,
-  `fecha_dev` date NOT NULL,
-  `img_dev` varchar(60) NOT NULL
+  `articulo_id` int(4) NOT NULL,
+  `categoria_id` int(4) DEFAULT NULL,
+  `autor` varchar(40) NOT NULL,
+  `titulo` varchar(40) NOT NULL,
+  `contenido` text NOT NULL,
+  `fecha` date NOT NULL,
+  `img` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -43,8 +43,8 @@ CREATE TABLE `articulo` (
 --
 
 CREATE TABLE `categoria` (
-  `categoria_id_dev` int(11) NOT NULL,
-  `categoria_dev` varchar(40) NOT NULL
+  `categoria_id` int(11) NOT NULL,
+  `categoria` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -59,6 +59,13 @@ CREATE TABLE `usuario` (
   `usuario_dev` varchar(80) NOT NULL,
   `password_dev` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id_dev`, `email_dev`, `usuario_dev`, `password_dev`) VALUES
+(1, 'juan@developero.com', 'Juan', '$2y$10$Cr6LiuLPEPqwePibULdJZ.UkKVYe2bgBPdzHYYvyw.n/5n3a/JxtG');
 
 --
 -- Índices para tablas volcadas
@@ -80,7 +87,7 @@ ALTER TABLE `categoria`
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`usuario_id`),
+  ADD PRIMARY KEY (`id_dev`),
   ADD UNIQUE KEY `email_dev` (`email_dev`);
 
 --
@@ -91,17 +98,17 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `articulo`
 --
 ALTER TABLE `articulo`
-  MODIFY `articulo_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `articulo_id` int(4) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `categoria_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `categoria_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `usuario_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_dev` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
