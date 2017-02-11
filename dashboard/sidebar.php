@@ -1,8 +1,6 @@
 <div class="col-sm-3 col-md-2 sidebar">
   <ul class="nav nav-sidebar">
-    <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-    <li><a href="#">Crear post</a></li>
-    <li><a href="#">Analytics</a></li>
-    <li><a href="#">Export</a></li>
+    <li><a href="dashboard.php">Overview</a></li>
+    <li><a href="post.php">New post</a></li>
   </ul>
 </div>
