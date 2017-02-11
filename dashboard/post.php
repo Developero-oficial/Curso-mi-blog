@@ -30,12 +30,12 @@ require 'navbar.php';
           </form>
         </div>
         <div class="col-md-2 main">
-          <form action="insertCategorie.php" method="POST">
+          <form>
             <div class="form-group">
             <label for="new_categorie">Add new cateogrie</label>
-              <input type="text" name="new_categorie" class="form-control" id="new_categorie" placeholder="New categorie">
+              <input type="text" class="form-control" id="new_categorie" placeholder="New categorie">
             </div>
-            <button type="submit" class="btn btn-default btn-block">Save</button>
+            <button type="button" id="submit_categorie" class="btn btn-default btn-block">Save</button>
           </form>
         </div>
       </div>
