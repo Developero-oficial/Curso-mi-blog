@@ -12,14 +12,15 @@ require 'navbar.php';
             <table class="table table-striped table-hover">
               <thead>
                 <tr>
-                  <th>#</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
+                  <th>#Id</th>
+                  <th>Author</th>
+                  <th>Date</th>
+                  <th>Title</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id="articles">
               </tbody>
             </table>
           </div>

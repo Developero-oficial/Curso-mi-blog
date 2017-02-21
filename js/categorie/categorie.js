@@ -25,7 +25,6 @@ function update_select_categorie(){
       url: '../functions/categorieSelect.php'
     })
     .done(function(result){
-      console.log(result)
       $('#categorie').html(result)
     })
     .fail(function(){

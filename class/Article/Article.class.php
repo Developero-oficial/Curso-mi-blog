@@ -4,7 +4,7 @@
 */
 class Article
 {
-  private $con;
+  public $con;
   public $title;
   public $author;
   public $categorie_id;
@@ -43,7 +43,8 @@ class Article
 
   public function select()
   {
-    return 'select';
+    $query = "SELECT * FROM `articulo`";
+    return $this->con->query($query);
   }
 
   public function insert()
