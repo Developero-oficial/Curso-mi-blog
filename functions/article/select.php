@@ -13,7 +13,7 @@ function getArticles()
     $tabla .= "<td>$row[autor]</td>";
     $tabla .= "<td>$row[fecha]</td>";
     $tabla .= "<td>$row[titulo]</td>";
-    $tabla .= "<td><a>Editar</a></td>";
+    $tabla .= "<td><a href='edit.php?id=$row[articulo_id]'>Editar</a></td>";
     $tabla .= "<td><a>Eliminar</a></td>";
     $tabla .= '</tr>';
   }
