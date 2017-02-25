@@ -34,7 +34,10 @@ function mostrar_valores_inputs(search){
       data: {'id': id_article}
     })
     .done(function(result){
-      alert(result)
+      var obj = $.parseJSON(result)
+      $('#title').val(obj.titulo)
+      $('#content').val(obj.contenido)
+      update_select_categorie(obj.categoria_id)
     })
     .fail(function(){
       alert('Hubo un error al cargar los articulos :( ')

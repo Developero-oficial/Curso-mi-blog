@@ -10,6 +10,7 @@ class Article
   public $categorie_id;
   public $content;
   public $img;
+  public $article_id;
 
   public function __construct(Conexion $con)
   {
@@ -41,10 +42,19 @@ class Article
     $this->img = $this->con->real_escape_string($img);
   }
 
+  public function setArticleId($article_id)
+  {
+    $this->article_id = $this->con->real_escape_string($article_id);
+  }
+
   public function select()
   {
-    $query = "SELECT * FROM `articulo`";
-    return $this->con->query($query);
+    if(empty($this->article_id)){
+      $query = "SELECT * FROM `articulo`";
+      return $this->con->query($query);
+    } 
+    $query = "SELECT * FROM `articulo` WHERE `articulo_id` = $this->article_id";
+    return $this->con->query($query);    
   }
 
   public function insert()

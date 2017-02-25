@@ -4,10 +4,11 @@ spl_autoload_register(function ($class) {
   include "../class/$class/$class.class.php";
 });
 
-function selectCategorie(){
+function selectCategorie($categorie_id){
   $categorie = new Categorie(new Conexion);
+  $categorie->setId($categorie_id);
   return $categorie->selectToArray();
 }
 
-echo selectCategorie();
+echo selectCategorie($_POST['categorie_id']);
 ?>

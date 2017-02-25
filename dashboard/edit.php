@@ -22,8 +22,8 @@ require 'navbar.php';
             <label for="content">Content</label>
             <textarea  name="content" class="form-control" rows="3" id="content"></textarea>
             <div class="form-group">
-              <label for="exampleInputFile">File input</label>
-              <input name="user-file" type="file" id="exampleInputFile">
+              <label for="img">File input</label>
+              <input name="user-file" type="file" id="img">
               <p class="help-block">Example block-level help text here.</p>
             </div>
             <button name="submit" type="submit" class="btn btn-default">Submit</button>

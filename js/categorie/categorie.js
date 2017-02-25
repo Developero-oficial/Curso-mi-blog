@@ -19,9 +19,10 @@ $(document).ready(function(){
   })
 })
 
-function update_select_categorie(){
+function update_select_categorie(categorie_id){
   $.ajax({
       type: 'POST',
+      data: {'categorie_id': categorie_id},
       url: '../functions/categorieSelect.php'
     })
     .done(function(result){

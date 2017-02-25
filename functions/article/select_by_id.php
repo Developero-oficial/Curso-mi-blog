@@ -1,12 +1,24 @@
 <?php 
 require 'require.php';
 
-var_dump($_POST);
-function getArticles()
+function validateId($id)
 {
-  $article = new Article(new Conexion);
-  $cliente = new Client($article);
-  // $res = $cliente->operate('select');
+  if(!is_numeric($id) || $id <= 0){
+    return false;
+  }
+  return true;
 }
 
-echo getArticles();
+function getArticles($id)
+{
+  $article = new Article(new Conexion);
+  $article->setArticleId($id);
+  $cliente = new Client($article);
+  $res = $cliente->operate('select');
+  $result_array = $res->fetch_array(MYSQLI_ASSOC);
+  return json_encode($result_array);
+}
+
+$id = $_POST['id'] ?? '';
+if(!validateId($id)) exit('Id inválido');
+echo getArticles($id);
