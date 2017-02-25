@@ -14,7 +14,7 @@ function getArticles()
     $tabla .= "<td>$row[fecha]</td>";
     $tabla .= "<td>$row[titulo]</td>";
     $tabla .= "<td><a href='edit.php?id=$row[articulo_id]'>Editar</a></td>";
-    $tabla .= "<td><a>Eliminar</a></td>";
+    $tabla .= "<td><a class='delete' href='../functions/article/delete.php?id=$row[articulo_id]'>Eliminar</a></td>";
     $tabla .= '</tr>';
   }
   return $tabla;

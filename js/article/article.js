@@ -19,6 +19,7 @@ function imprimir_tabla(){
     })
     .done(function(result){
       $('#articles').html(result)
+      listen_delete()
     })
     .fail(function(){
       alert('Hubo un error al cargar los articulos :( ')
@@ -45,4 +46,10 @@ function mostrar_valores_inputs(search){
       alert('Hubo un error al cargar los articulos :( ')
     })
   
+}
+
+function listen_delete(){
+  $('.delete').on('click', function(){
+    return confirm('¿Desea eliminar?')
+  })
 }

@@ -85,7 +85,9 @@ class Article
 
   public function delete()
   {
-    return 'delete';
+    $query = "DELETE FROM `articulo` WHERE `articulo_id` = $this->article_id";
+    $this->con->query($query);
+    return $this->con->affected_rows <= 0 ? false : true;
   }  
 }
 
