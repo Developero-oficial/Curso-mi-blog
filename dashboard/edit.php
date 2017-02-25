@@ -7,12 +7,12 @@ require 'navbar.php';
         <?php require 'sidebar.php'; ?>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Dashboard</h1>
-          <h2 class="sub-header">New Post</h2>
+          <h2 class="sub-header">Edit Post</h2>
         </div>
       </div>
       <div class="row">
         <div class="col-sm-9 col-sm-offset-3 col-md-7 col-md-offset-2 main">
-          <form enctype="multipart/form-data" action="../functions/article/insert.php" method="POST">
+          <form enctype="multipart/form-data" action="../functions/article/update.php" method="POST">
             <div class="form-group">
               <label for="title">Title</label>
               <input type="text" name="title" class="form-control" id="title" placeholder="New title">
@@ -26,6 +26,7 @@ require 'navbar.php';
               <input name="user-file" type="file" id="img">
               <p class="help-block">Example block-level help text here.</p>
             </div>
+            <input type="hidden" name="id_article" id="id_article">
             <button name="submit" type="submit" class="btn btn-default">Submit</button>
           </form>
         </div>

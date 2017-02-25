@@ -10,7 +10,7 @@ $(document).ready(function(){
   if (pathfile[3] === 'edit.php'){
     mostrar_valores_inputs($(location).attr('search'))
   }
-  
+
 })
 
 function imprimir_tabla(){
@@ -35,9 +35,11 @@ function mostrar_valores_inputs(search){
     })
     .done(function(result){
       var obj = $.parseJSON(result)
+      console.log(obj.articulo_id)
       $('#title').val(obj.titulo)
       $('#content').val(obj.contenido)
       update_select_categorie(obj.categoria_id)
+      $('#id_article').val(obj.articulo_id)
     })
     .fail(function(){
       alert('Hubo un error al cargar los articulos :( ')

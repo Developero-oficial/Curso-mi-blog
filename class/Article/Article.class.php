@@ -69,7 +69,18 @@ class Article
 
   public function update()
   {
-    return 'update';
+    if (empty($this->img)) {
+      $query = "UPDATE `articulo` SET `categoria_id`= $this->categorie_id, `titulo`= '$this->title', `contenido`= '$this->content' WHERE `articulo_id` = $this->article_id";
+    } else{
+       $query = "UPDATE `articulo` SET `categoria_id`= $this->categorie_id, `titulo`= '$this->title', `contenido`= '$this->content', `img`='$this->img' WHERE
+          `articulo_id` = $this->article_id
+        ";
+    }
+    $this->con->query($query);
+    if ($this->con->affected_rows <= 0){
+      return false;
+    }
+    return true;
   }
 
   public function delete()
