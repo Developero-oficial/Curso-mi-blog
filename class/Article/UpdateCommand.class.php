@@ -16,4 +16,3 @@ class UpdateCommand implements iCommand
     return $this->article->update();
   }
 }
-?>

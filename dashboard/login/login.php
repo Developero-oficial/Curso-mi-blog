@@ -1,7 +1,5 @@
 <?php
-spl_autoload_register(function ($class) {
-    include "../../class/Message/$class.class.php";
-});
+require '../../functions/autoload_class.php';
 
 $message = isset($_GET['message']) && isset($_GET['type']) ? MessageFactory::createMessage($_GET['type']) : false;
 

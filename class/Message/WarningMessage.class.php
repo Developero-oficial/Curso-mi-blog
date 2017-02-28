@@ -10,4 +10,3 @@ class WarningMessage extends Message
     return "<div class='alert alert-warning' role='alert'>$message</div>";
   }
 }
-?>

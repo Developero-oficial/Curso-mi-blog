@@ -1,7 +1,6 @@
 <?php 
 
-interface iCommand {
+interface iCommand
+{
   public function exec();
 }
-
-?>

@@ -5,4 +5,3 @@ spl_autoload_register(function ($class) {
     return include "../class/$class/$class.class.php";
   include "../class/Article/$class.class.php";
 });
-?>

@@ -42,5 +42,3 @@ class Crud
     return $this->delete->exec();
   }
 }
-
-?>

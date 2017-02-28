@@ -12,5 +12,3 @@ if (! $session->validateSession('id')) {
 $session->destroySession();
 
 header('location: login/login.php');
-
-?>

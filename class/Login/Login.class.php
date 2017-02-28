@@ -50,5 +50,3 @@ class Login
     return password_verify($this->password, $password);
   }
 }
-
-?>

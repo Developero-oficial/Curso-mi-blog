@@ -1,13 +1,13 @@
 $(document).ready(function(){
   // ajax cargar lista de articulos en formato tabla
-  var path =  $(location).attr('pathname')
-  var pathfile = path.split('/')
+  var path =  $(location).attr('pathname').split('/')
+  var file = path[3]
 
-  if (pathfile[3] === 'dashboard.php'){
+  if (file === 'dashboard.php'){
     imprimir_tabla()
   }
 
-  if (pathfile[3] === 'edit.php'){
+  if (file === 'edit.php'){
     mostrar_valores_inputs($(location).attr('search'))
   }
 
@@ -36,10 +36,9 @@ function mostrar_valores_inputs(search){
     })
     .done(function(result){
       var obj = $.parseJSON(result)
-      console.log(obj.articulo_id)
       $('#title').val(obj.titulo)
       $('#content').val(obj.contenido)
-      update_select_categorie(obj.categoria_id)
+      updateSelectCategorie(obj.categoria_id)
       $('#id_article').val(obj.articulo_id)
     })
     .fail(function(){

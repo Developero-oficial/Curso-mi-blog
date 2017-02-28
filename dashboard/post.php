@@ -6,7 +6,6 @@ require 'navbar.php';
       <div class="row">
         <?php require 'sidebar.php'; ?>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Dashboard</h1>
           <h2 class="sub-header">New Post</h2>
         </div>
       </div>
@@ -18,7 +17,9 @@ require 'navbar.php';
               <input type="text" name="title" class="form-control" id="title" placeholder="New title">
             </div>
             <label for="categorie">Categorie</label>
-            <select name="categorie_id" class="form-control" id="categorie"></select>
+            <select name="categorie_id" class="form-control" id="categorie">
+              <option value="0">Elige una categoría</option>
+            </select>
             <label for="content">Content</label>
             <textarea  name="content" class="form-control" rows="3" id="content"></textarea>
             <div class="form-group">

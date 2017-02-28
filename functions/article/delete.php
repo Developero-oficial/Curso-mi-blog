@@ -1,5 +1,6 @@
 <?php 
-require 'require.php';
+require '../autoload_class.php';
+require '../validate_session.php';
 
 if(empty($_GET['id'])) exit('No se recibió el id');
 if(!is_numeric($_GET['id']) or $_GET['id'] <= 0) exit('Hubo un error');
@@ -13,4 +14,3 @@ if ($cliente->operate('delete')){
   exit();
 }
 header('location: ../../dashboard/dashboard.php?message=Hubo un error al guardar el articulo :(');
-?>

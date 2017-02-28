@@ -13,8 +13,6 @@ class DeleteCommand implements iCommand
 
   public function exec()
   {
-    echo '*' . __CLASS__ . '-> exec</br>';
     return $this->article->delete();
   }
 }
-?>

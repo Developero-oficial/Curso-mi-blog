@@ -16,4 +16,3 @@ class SelectCommand implements iCommand
     return $this->article->select();
   }
 }
-?>

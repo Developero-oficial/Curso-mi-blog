@@ -14,14 +14,13 @@ function validar($file)
 
 function upload($file)
 {
-  $file = $_SERVER['DOCUMENT_ROOT'] . '/curso-blog-2/img/'.basename($_FILES['user-file']['name']);
+  $dir = '../../img';
+  $file = basename($_FILES['user-file']['name']);
   $file = str_replace(' ', '', $file);
   
-  if (!move_uploaded_file($_FILES['user-file']['tmp_name'], $file)) {
+  if (!move_uploaded_file($_FILES['user-file']['tmp_name'], "$dir/$file")) {
     return false;
   }
 
   return $file;
 }
-
-?>

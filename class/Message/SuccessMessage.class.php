@@ -9,4 +9,3 @@ class SuccessMessage extends Message
     return "<div class='alert alert-success' role='alert'>$message</div>";
   }
 }
-?>

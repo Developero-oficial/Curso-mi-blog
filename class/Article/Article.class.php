@@ -20,6 +20,7 @@ class Article
   public function setTitle($title)
   {
     $this->title = $this->con->real_escape_string($title);
+    $this->title = ucwords($this->title);
   }
 
   public function setAuthor($author)
@@ -49,46 +50,35 @@ class Article
 
   public function select()
   {
-    if(empty($this->article_id)){
-      $query = "SELECT * FROM `articulo`";
-      return $this->con->query($query);
-    } 
-    $query = "SELECT * FROM `articulo` WHERE `articulo_id` = $this->article_id";
-    return $this->con->query($query);    
+    $query = "SELECT * FROM `articulo`";
+    if($this->article_id){
+      $query .= "WHERE `articulo_id` = $this->article_id";
+    }
+    return $this->con->query($query);
   }
 
   public function insert()
   {
     $query = "INSERT INTO `articulo`(`categoria_id`, `autor`, `titulo`, `contenido`, `fecha`, `img`) VALUES ($this->categorie_id, '$this->author', '$this->title', '$this->content', '". date('Y-m-d') . "', '$this->img')";
     $this->con->query($query);
-    if ($this->con->affected_rows <= 0){
-      return false;
-    } 
-    return true;
+    return $this->con->affected_rows;
   }
 
   public function update()
   {
-    if (empty($this->img)) {
-      $query = "UPDATE `articulo` SET `categoria_id`= $this->categorie_id, `titulo`= '$this->title', `contenido`= '$this->content' WHERE `articulo_id` = $this->article_id";
+    if ($this->img) {
+      $query = "UPDATE `articulo` SET `categoria_id`= $this->categorie_id, `titulo`= '$this->title', `contenido`= '$this->content', `img`='$this->img' WHERE `articulo_id` = $this->article_id";
     } else{
-       $query = "UPDATE `articulo` SET `categoria_id`= $this->categorie_id, `titulo`= '$this->title', `contenido`= '$this->content', `img`='$this->img' WHERE
-          `articulo_id` = $this->article_id
-        ";
+      $query = "UPDATE `articulo` SET `categoria_id`= $this->categorie_id, `titulo`= '$this->title', `contenido`= '$this->content' WHERE `articulo_id` = $this->article_id";
     }
     $this->con->query($query);
-    if ($this->con->affected_rows <= 0){
-      return false;
-    }
-    return true;
+    return $this->con->affected_rows;
   }
 
   public function delete()
   {
     $query = "DELETE FROM `articulo` WHERE `articulo_id` = $this->article_id";
     $this->con->query($query);
-    return $this->con->affected_rows <= 0 ? false : true;
-  }  
+    return $this->con->affected_rows;
+  }
 }
-
-?>
