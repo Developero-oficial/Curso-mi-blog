@@ -1,4 +1,5 @@
-<?php 
+<?php
+require '../functions/autoload_class.php';
 require '../functions/blog/page.php';
 ?>
 <!DOCTYPE html>
@@ -28,28 +29,15 @@ require '../functions/blog/page.php';
   </head>
 
   <body>
-
-    <div class="blog-masthead">
-      <div class="container">
-        <nav class="blog-nav">
-          <a class="blog-nav-item active" href="#">Home</a>
-          <a class="blog-nav-item" href="#">New features</a>
-          <a class="blog-nav-item" href="#">Press</a>
-          <a class="blog-nav-item" href="#">New hires</a>
-          <a class="blog-nav-item" href="#">About</a>
-        </nav>
-      </div>
-    </div>
-
+  <?php include 'navbar.php'; ?>
     <div class="container">
 
-      <div class="blog-header">
-        <h1 class="blog-title">Curso Cómo hacer un blog</h1>
-        <p class="lead blog-description"> con Php7 y Bootstrap</p>
+      <div class="page-header master">
+        <h1 class="master">Bienvenido a mi blog <small>hecho con Php 7 y Bootstrap <3</small></h1>
       </div>
       <div class="row">
 
-        <div class="col-sm-8 blog-main">
+        <div class="col-sm-12 blog-main">
            <?php echo getArticle(getId());?>
 
         </div><!-- /.blog-main -->

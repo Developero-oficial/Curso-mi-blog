@@ -6,7 +6,10 @@ class Session
 {
   public function __construct()
   {
-    session_start();
+    session_start([
+      'cache_limiter' => 'private',
+      'cookie_httponly' => true
+    ]);
   }
 
   public function addValue ($key, $value)
@@ -27,12 +30,13 @@ class Session
       unset($_SESSION[$key]);
   }
 
-  public function issetValue ($value) 
+  public function issetValue ($value): bool
   {
     return isset($_SESSION[$value]);
   }
 
-  public function validateSession ($key) {
+  public function validateSession ($key): bool
+  {
     if (! $this->issetValue($key))
     {
       $this->destroySession();

@@ -7,7 +7,7 @@ function validateId($id)
   return is_numeric($id) and $id > 0;
 }
 
-function getArticles($id)
+function getArticle(int $id)
 {
   $article = new Article(new Conexion);
   $article->setArticleId($id);
@@ -18,5 +18,5 @@ function getArticles($id)
 }
 
 $id = $_POST['id'] ?? '';
-if(!validateId($id)) exit('Id inválido');
-echo getArticles($id);
+if(!validateId($id)) exit(false);
+echo getArticle($id);

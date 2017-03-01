@@ -19,7 +19,6 @@ h6, .h6 {
   color: #333;
 }
 
-
 /*
  * Override Bootstrap's default container.
  */
@@ -88,11 +87,17 @@ h6, .h6 {
   font-size: 50px;
   font-weight: normal;
 }
+a:hover {
+  text-decoration: none;
+}
 .blog-description {
   font-size: 20px;
   color: #999;
 }
 
+.master {
+  font-size: 40px;
+}
 
 /*
  * Main column and sidebar layout
@@ -151,6 +156,7 @@ h6, .h6 {
 
 .post-img {
   width: 80%;
+  text-align: center;
 }
 
 /*

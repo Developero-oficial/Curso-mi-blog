@@ -11,7 +11,7 @@ class DeleteCommand implements iCommand
     $this->article = $article;
   }
 
-  public function exec()
+  public function exec(): int
   {
     return $this->article->delete();
   }

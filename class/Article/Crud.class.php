@@ -22,22 +22,22 @@ class Crud
     $this->delete = $deleteC;
   }
 
-  public function insert()
+  public function insert(): int
   {
     return $this->insert->exec();
   }
 
-  public function select()
+  public function select(): mysqli_result
   {
     return $this->select->exec();
   }
 
-  public function update()
+  public function update(): int
   {
     return $this->update->exec();
   }
 
-  public function delete()
+  public function delete(): int
   {
     return $this->delete->exec();
   }

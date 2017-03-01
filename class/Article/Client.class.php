@@ -21,7 +21,7 @@ class Client
     $this->crud = new Crud($this->insert, $this->select, $this->update, $this->delete);
   }
 
-  public function operate($action)
+  public function operate(string $action)
   {
     switch ($action) {
       case 'insert':

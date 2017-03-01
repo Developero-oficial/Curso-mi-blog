@@ -1,12 +1,7 @@
 <?php 
-require 'autoload.php';
-
-function validateId($id)
+function validateId($id): bool
 {
-  if(!is_numeric($id) || $id <= 0){
-    return false;
-  }
-  return true;
+  return is_numeric($id) && $id >= 0;
 }
 
 function getArticle($id)

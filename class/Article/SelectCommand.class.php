@@ -11,7 +11,7 @@ class SelectCommand implements iCommand
     $this->article = $article;
   }
 
-  public function exec()
+  public function exec(): mysqli_result
   {
     return $this->article->select();
   }

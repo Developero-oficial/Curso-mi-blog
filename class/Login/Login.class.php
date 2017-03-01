@@ -25,19 +25,19 @@ class Login
 
   public function signIn ()
   {
-    $row = $this->getArrayQueryResult();
+    $row = $this->getQueryResult()->fetch_array(MYSQLI_ASSOC);
     if ($this->isAffectedRows()) {
       if ($this->passwordVerify($row['password_dev']))
         return $row;
-    }      
+    }
     return false;
   }
 
-  public function getArrayQueryResult ()
+  public function getQueryResult (): mysqli_result
   {
     $query = "SELECT * FROM `usuario` WHERE email_dev = '$this->email'";
-    $result = $this->con->query($query);
-    return $result->fetch_array(MYSQLI_ASSOC);
+    return $this->con->query($query);
+    // return $result->fetch_array(MYSQLI_ASSOC);
   }
 
   public function isAffectedRows ():bool

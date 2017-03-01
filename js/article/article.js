@@ -35,6 +35,7 @@ function mostrar_valores_inputs(search){
       data: {'id': id_article}
     })
     .done(function(result){
+      if (!result) return alert('Hubo un error al cargar la información :(')
       var obj = $.parseJSON(result)
       $('#title').val(obj.titulo)
       $('#content').val(obj.contenido)
