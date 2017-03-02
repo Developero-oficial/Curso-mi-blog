@@ -37,7 +37,6 @@ class Login
   {
     $query = "SELECT * FROM `usuario` WHERE email_dev = '$this->email'";
     return $this->con->query($query);
-    // return $result->fetch_array(MYSQLI_ASSOC);
   }
 
   public function isAffectedRows ():bool
